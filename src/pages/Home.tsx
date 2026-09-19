@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useChartStore } from '../store/chartStore';
 import { drawChartToCanvas } from '../utils/canvas';
 import { useEffect, useRef, useState } from 'react';
@@ -32,7 +32,15 @@ export default function Home() {
 
   return (
     <div style={{ padding: 24, maxWidth: 960, margin: '0 auto' }}>
-      <h1 style={{ fontSize: 24, marginBottom: 16 }}>我的图解</h1>
+      <h1 style={{ fontSize: 24, marginBottom: 16 }}>
+        我的图解
+        <Link
+          to="/knitting"
+          style={{ fontSize: 13, marginLeft: 14, fontWeight: 400, color: '#3498db' }}
+        >
+          🧶 尺寸换算编织指引（起针/减针行号表）→
+        </Link>
+      </h1>
       <div style={{ display: 'flex', gap: 12, marginBottom: 24, alignItems: 'center' }}>
         <input type="number" value={newCols} onChange={(e) => setNewCols(Number(e.target.value))} style={{ width: 70, padding: '6px 8px' }} placeholder="宽" />
         <span>×</span>
