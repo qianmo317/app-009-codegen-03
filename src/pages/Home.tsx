@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useChartStore } from '../store/chartStore';
 import { drawChartToCanvas } from '../utils/canvas';
 import { useEffect, useRef, useState } from 'react';
@@ -32,6 +32,14 @@ export default function Home() {
 
   return (
     <div style={{ padding: 24, maxWidth: 960, margin: '0 auto' }}>
+      <div style={{ marginBottom: 20 }}>
+        <Link
+          to="/sizing"
+          style={{ display: 'inline-block', padding: '10px 18px', borderRadius: 8, background: '#f4efe4', border: '1px solid #d8cfbc', color: '#5d5142', textDecoration: 'none', fontSize: 14 }}
+        >
+          📏 尺寸 → 编织指引换算（量织片密度，算起针/减针/逐行表，多版本对比）
+        </Link>
+      </div>
       <h1 style={{ fontSize: 24, marginBottom: 16 }}>我的图解</h1>
       <div style={{ display: 'flex', gap: 12, marginBottom: 24, alignItems: 'center' }}>
         <input type="number" value={newCols} onChange={(e) => setNewCols(Number(e.target.value))} style={{ width: 70, padding: '6px 8px' }} placeholder="宽" />
